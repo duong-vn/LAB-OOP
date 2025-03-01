@@ -31,12 +31,12 @@ public class SecondDegreeEquation {
             if (delta > 0) {
                 x1 = ((-b + Math.sqrt(delta)) / (2 * a));
                 x2 = ((-b - Math.sqrt(delta)) / (2 * a));
-                strNotification = "Phuong trinh co 2 nghiem: " + "x1 = " + x1 + " và x2 = " + x2;
+                strNotification = "Found 2 solutions: " + "x1 = " + x1 + " và x2 = " + x2;
             } else if (delta == 0) {
                 x1 = (-b / (2 * a));
-                strNotification = "Phuong trinh co nghiem kep: " + "x1 = x2 = " + x1;
+                strNotification = "Found 2 solutions: " + "x1 = x2 = " + x1;
             } else {
-                strNotification = "Phuong trinh vo nghiem!";
+                strNotification = "Can't find solution";
             }
             JOptionPane.showMessageDialog(null, strNotification,
                     "Display", JOptionPane.INFORMATION_MESSAGE);
