@@ -33,6 +33,9 @@ public class Calculator{
                    case "/": 
                    num1 /= num2;
                    break;
+                   default:
+                   System.out.println("Can't calculate");
+                   System.exit(0);
 
             }
 
