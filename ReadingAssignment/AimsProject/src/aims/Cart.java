@@ -35,27 +35,27 @@ public class Cart {
 
 
 	   
-	   public void removeDigitalVideoDisc(String title) {
-	        boolean found = false;
-	        for (int i = 0; i < qtyOrdered; i++) {
-	            if (itemsOrdered[i].getTitle().equalsIgnoreCase(title)) { 
-	                found = true;
-	                title = itemsOrdered[i].getTitle();
-	                  for (int j = i; j < qtyOrdered - 1; j++) {
-	                    itemsOrdered[j] = itemsOrdered[j + 1];
-	                }
-	                itemsOrdered[qtyOrdered - 1] = null; 
-	                qtyOrdered--;
-	               
-	                JOptionPane.showMessageDialog(null, "The disc \"" + title + "\" has been removed from the cart.", null, JOptionPane.INFORMATION_MESSAGE);
-	               break;
-	            }
-	        }
-	        if (!found) {
-	            //System.out.println("The disc \"" + title + "\" was not found in the cart.");
-	            JOptionPane.showMessageDialog(null, "The disc \"" + title + "\" was not found in the cart.", null, JOptionPane.INFORMATION_MESSAGE);
-	        }
-	    }
+//	   public void removeDigitalVideoDisc(String title) {
+//	        boolean found = false;
+//	        for (int i = 0; i < qtyOrdered; i++) {
+//	            if (itemsOrdered[i].getTitle().equalsIgnoreCase(title)) { 
+//	                found = true;
+//	                title = itemsOrdered[i].getTitle();
+//	                  for (int j = i; j < qtyOrdered - 1; j++) {
+//	                    itemsOrdered[j] = itemsOrdered[j + 1];
+//	                }
+//	                itemsOrdered[qtyOrdered - 1] = null; 
+//	                qtyOrdered--;
+//	               
+//	                JOptionPane.showMessageDialog(null, "The disc \"" + title + "\" has been removed from the cart.", null, JOptionPane.INFORMATION_MESSAGE);
+//	               break;
+//	            }
+//	        }
+//	        if (!found) {
+//	            //System.out.println("The disc \"" + title + "\" was not found in the cart.");
+//	            JOptionPane.showMessageDialog(null, "The disc \"" + title + "\" was not found in the cart.", null, JOptionPane.INFORMATION_MESSAGE);
+//	        }
+//	    }
 	   public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 	        boolean found = false;
 	        for (int i = 0; i < qtyOrdered; i++) {
@@ -102,18 +102,18 @@ public class Cart {
 	        }
 	       
 	    }
-					   public static void main(String[] args) {
-						   Cart ok = new Cart();
-						   DigitalVideoDisc dvd = new DigitalVideoDisc("2","2" , 15.6f);
-						   ok.addDigitalVideoDisc(new DigitalVideoDisc("1","2" , 15.6f));
-						   ok.addDigitalVideoDisc(new DigitalVideoDisc("3","2" , 15.6f));
-						  ok.addDigitalVideoDisc(dvd);
-						   
-						   ok.printCart();
-						   ok.removeDigitalVideoDisc(dvd);
-						   ok.printCart();
-						   
-						 
-					   }
+//					   public static void main(String[] args) {
+//						   Cart ok = new Cart();
+//						   DigitalVideoDisc dvd = new DigitalVideoDisc("2","2" , 15.6f);
+//						   ok.addDigitalVideoDisc(new DigitalVideoDisc("1","2" , 15.6f));
+//						   ok.addDigitalVideoDisc(new DigitalVideoDisc("3","2" , 15.6f));
+//						  ok.addDigitalVideoDisc(dvd);
+//						   
+//						   ok.printCart();
+//						   ok.removeDigitalVideoDisc(dvd);
+//						   ok.printCart();
+//						   
+//						 
+//					   }
 					
 }
