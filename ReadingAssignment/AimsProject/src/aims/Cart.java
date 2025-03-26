@@ -60,7 +60,7 @@ public class Cart {
 	        boolean found = false;
 	        for (int i = 0; i < qtyOrdered; i++) {
 	            if (itemsOrdered[i].equals(disc)) {
-	                // Dịch chuyển các phần tử phía sau lên
+	              
 	                for (int j = i; j < qtyOrdered - 1; j++) {
 	                    itemsOrdered[j] = itemsOrdered[j + 1];
 	                }
