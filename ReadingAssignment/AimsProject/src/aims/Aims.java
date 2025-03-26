@@ -20,7 +20,7 @@ public class Aims {
 	    System.out.println("Total Cost is: ");
 	    System.out.println(anOrder.totalCost());
 	   anOrder.printCart();
-	   anOrder.removeDigitalVideoDisc("aladin");
+	   anOrder.removeDigitalVideoDisc(dvd2);
 	   anOrder.printCart();
 	  
 	    

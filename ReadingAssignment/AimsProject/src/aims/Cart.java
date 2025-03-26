@@ -48,7 +48,7 @@ public class Cart {
 	                qtyOrdered--;
 	               
 	                JOptionPane.showMessageDialog(null, "The disc \"" + title + "\" has been removed from the cart.", null, JOptionPane.INFORMATION_MESSAGE);
-	               
+	               break;
 	            }
 	        }
 	        if (!found) {
@@ -56,6 +56,28 @@ public class Cart {
 	            JOptionPane.showMessageDialog(null, "The disc \"" + title + "\" was not found in the cart.", null, JOptionPane.INFORMATION_MESSAGE);
 	        }
 	    }
+	   public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
+	        boolean found = false;
+	        for (int i = 0; i < qtyOrdered; i++) {
+	            if (itemsOrdered[i].equals(disc)) {
+	                // Dịch chuyển các phần tử phía sau lên
+	                for (int j = i; j < qtyOrdered - 1; j++) {
+	                    itemsOrdered[j] = itemsOrdered[j + 1];
+	                }
+	                qtyOrdered--;
+	                found = true;
+	                System.out.println("The disc \"" + disc.getTitle() + "\" has been removed.");
+	                break;
+	            }
+	        }
+	        if (!found) {
+	            System.out.println("Disc not found in cart.");
+	        }
+	    }
+	   
+
+	   
+	 
 	   
 	   public float totalCost() {
 	        float total = 0;
@@ -64,6 +86,7 @@ public class Cart {
 	        }
 	        return total;
 	    }
+	  
 	   public void printCart() {
 	        
 	        if (qtyOrdered == 0) {
@@ -81,13 +104,16 @@ public class Cart {
 	    }
 					   public static void main(String[] args) {
 						   Cart ok = new Cart();
-						   for( int i =0  ; i <= 20 ; i++) {
-						   ok.addDigitalVideoDisc(new DigitalVideoDisc("1", "1",  15.6f));
-						   }
+						   DigitalVideoDisc dvd = new DigitalVideoDisc("2","2" , 15.6f);
+						   ok.addDigitalVideoDisc(new DigitalVideoDisc("1","2" , 15.6f));
+						   ok.addDigitalVideoDisc(new DigitalVideoDisc("3","2" , 15.6f));
+						  ok.addDigitalVideoDisc(dvd);
 						   
 						   ok.printCart();
-						   ok.removeDigitalVideoDisc("1");
+						   ok.removeDigitalVideoDisc(dvd);
+						   ok.printCart();
 						   
+						 
 					   }
 					
 }
