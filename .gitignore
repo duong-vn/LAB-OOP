@@ -1,4 +1,5 @@
-*.class
+bin/     # Ignore compiled class files
+.settings/ # Ignore Eclipse project settings
+.classpath # Ignore Eclipse classpath
+.project 
 /.metadata/
-.classpath
-.project
