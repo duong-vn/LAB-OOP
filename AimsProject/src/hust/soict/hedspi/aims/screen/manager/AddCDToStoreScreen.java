@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import hust.soict.hedspi.aims.media.Book;
 import hust.soict.hedspi.aims.media.CompactDisc;
 import hust.soict.hedspi.aims.media.DigitalVideoDisc;
+import hust.soict.hedspi.aims.media.Track;
 import hust.soict.hedspi.aims.store.Store;
 
 public class AddCDToStoreScreen extends AddMediaToStoreScreen {
@@ -21,7 +22,7 @@ public class AddCDToStoreScreen extends AddMediaToStoreScreen {
 	private JTextField tfDirector;
 	private JTextField tfArtist;
 	private JTextField tfLength;
-	
+	private JTextField tfTrack;
 	public AddCDToStoreScreen(Store store) {
 		super(store,"CD");
 		addInputFields();
@@ -35,7 +36,7 @@ public class AddCDToStoreScreen extends AddMediaToStoreScreen {
         tfDirector = new JTextField(20);
         tfLength = new JTextField(20);
         tfArtist = new JTextField(20);
-        
+        tfTrack = new JTextField(20);
         
         inputPanel.add(new JLabel("Title:"));
         inputPanel.add(tfTitle);
@@ -45,6 +46,8 @@ public class AddCDToStoreScreen extends AddMediaToStoreScreen {
         inputPanel.add(tfDirector);
         inputPanel.add(new JLabel("Artist:"));
         inputPanel.add(tfArtist);
+        inputPanel.add(new JLabel("Track:"));
+        inputPanel.add(tfTrack);
         inputPanel.add(new JLabel("Length:"));
         inputPanel.add(tfLength);
         inputPanel.add(new JLabel("Price:"));
@@ -57,10 +60,12 @@ public class AddCDToStoreScreen extends AddMediaToStoreScreen {
                 String category = tfCategory.getText();
                 String director = tfDirector.getText();
                 String artist = tfArtist.getText();
+                String track = tfTrack.getText();
                 int length  = Integer.parseInt(tfLength.getText());
                 float price = Float.parseFloat(tfPrice.getText());
-
+                	
                 CompactDisc newCD = new CompactDisc(title, category ,director,artist, length, price);
+                newCD.addTrack(new Track(track, length));
                 store.addMedia(newCD);
 
                 JOptionPane.showMessageDialog(null, "CD added successfully!");

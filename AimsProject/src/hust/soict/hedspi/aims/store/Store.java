@@ -64,10 +64,30 @@ public class Store {
        
 
         // CDs
-        addMedia(new CompactDisc("OK Computer", "Alternative Rock", "Radiohead", "Radiohead", 53, 13.99f));
-        addMedia(new CompactDisc("Nevermind", "Grunge", "Nirvana", "Nirvana", 42, 12.00f));
-        addMedia(new CompactDisc("The Joshua Tree", "Rock", "U2", "U2", 50, 14.50f));
-        addMedia(new CompactDisc("Dark Side of the Moon", "Progressive Rock", "Pink Floyd", "Pink Floyd", 43, 15.00f));
+        CompactDisc cd1 = new CompactDisc("OK Computer", "Alternative Rock", "Radiohead", "Radiohead", 53, 13.99f);
+        cd1.addTrack(new Track("Paranoid Android", 6));
+        cd1.addTrack(new Track("Karma Police", 4));
+        cd1.addTrack(new Track("No Surprises", 4));
+
+        CompactDisc cd2 = new CompactDisc("Nevermind", "Grunge", "Nirvana", "Nirvana", 42, 12.00f);
+        cd2.addTrack(new Track("Smells Like Teen Spirit", 5));
+        cd2.addTrack(new Track("Come As You Are", 3));
+        cd2.addTrack(new Track("Lithium", 4));
+
+        CompactDisc cd3 = new CompactDisc("The Joshua Tree", "Rock", "U2", "U2", 50, 14.50f);
+        cd3.addTrack(new Track("Where the Streets Have No Name", 6));
+        cd3.addTrack(new Track("I Still Haven't Found What I'm Looking For", 4));
+        cd3.addTrack(new Track("With or Without You", 5));
+
+        CompactDisc cd4 = new CompactDisc("Dark Side of the Moon", "Progressive Rock", "Pink Floyd", "Pink Floyd", 43, 15.00f);
+        cd4.addTrack(new Track("Speak to Me/Breathe", 4));
+        cd4.addTrack(new Track("Time", 7));
+        cd4.addTrack(new Track("Money", 6));
+
+        addMedia(cd1);
+        addMedia(cd2);
+        addMedia(cd3);
+        addMedia(cd4);
 //        addMedia(new CompactDisc("Led Zeppelin IV", "Hard Rock", 14.00f, 42, "Led Zeppelin", "Led Zeppelin"));
        
             }

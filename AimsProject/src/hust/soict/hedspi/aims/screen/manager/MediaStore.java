@@ -10,8 +10,11 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.playable.Playable;
@@ -53,7 +56,25 @@ public class MediaStore extends JPanel {
     private class ButtonListener implements ActionListener {
         
         public void actionPerformed(ActionEvent e) {
-            ((Playable) media).play(); // Ép kiểu rồi gọi play()
+        	createPlayDialog();
         }
         }
+    private void createPlayDialog() {
+        JDialog playDialog = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Playing: " + media.getTitle(), true);
+        JPanel dialogPanel = new JPanel();
+
+        if (media instanceof Playable) {
+            ((Playable) media).play(); // Call the play method
+            dialogPanel.add(new JLabel("Playing: " + media.getTitle()));
+            dialogPanel.add(new JLabel("\nLength: " + media.getLength()));
+        } else {
+            dialogPanel.add(new JLabel("Cannot play: " + media.getTitle()));
+        }
+
+        playDialog.add(dialogPanel);
+        playDialog.setSize(200, 150);
+        playDialog.setLocationRelativeTo(this);
+        playDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        playDialog.setVisible(true);
+    }
 }

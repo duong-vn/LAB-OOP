@@ -81,5 +81,6 @@ public abstract class Media {
 		Media other = (Media) obj;
 		return title != null ? title.equals(other.title) : other.title == null;
 	}
+	public abstract int getLength(); 
 
 }

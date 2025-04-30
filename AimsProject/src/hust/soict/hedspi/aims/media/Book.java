@@ -49,4 +49,10 @@ public class Book extends Media {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public int getLength() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
